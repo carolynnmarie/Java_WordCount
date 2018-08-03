@@ -1,7 +1,6 @@
 package io.carolynn.wordcount;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 public class WordCount {
@@ -15,6 +14,8 @@ public class WordCount {
         } catch (FileNotFoundException e) {
             System.out.println(fileName + " Does Not Exist");
             System.exit(-1);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         this.wordCount = new HashMap<>();
     }
@@ -47,4 +48,7 @@ public class WordCount {
         }
         return count;
     }
+
+
+
 }
